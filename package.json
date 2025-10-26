@@ -1,0 +1,50 @@
+{
+  "name": "vs-phonk",
+  "displayName": "vs-phonk",
+  "description": "Display random pictures and play phonk sounds when linter errors are fixed",
+  "repository": "https://github.com/pranshuj73/vs-phonk",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vs-phonk.makeMeFeelSigma",
+        "title": "Make me feel Sigma 🗿",
+        "category": "vs-phonk"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "vs-phonk.sidebar",
+          "name": "vs-phonk",
+          "when": "true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3"
+  }
+}
